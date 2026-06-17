@@ -4,48 +4,108 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //System.out.print("Olá Mundo!"); //Print sem quebra de linha
-        //System.out.println("Meu primeiro programa Java"); //Print com quebra de linha
-        //System.out.print("Javeiro");
+        // =========================================================
+        // PRIMEIROS TESTES DE SAÍDA DE DADOS
+        // =========================================================
+
+        // Print sem quebra de linha
+        // System.out.print("Olá Mundo!");
+
+        // Print com quebra de linha
+        // System.out.println("Meu primeiro programa Java");
+
+        // Outro exemplo simples
+        // System.out.print("Javeiro");
 
 
-        //EXEMPLOS DE ESCRITA ( VALOR DE UMA VARIÁVEL INTEIRA E DECIMAL)
+        // =========================================================
+        // EXEMPLO 1 - EXIBINDO VARIÁVEIS NO CONSOLE
+        // =========================================================
+
         int y = 32;
         double x = 10.35784;
+
         System.out.println(y);
         System.out.println(x);
-        System.out.printf("%.2f%n",x); //Delimita 2 casas após a vírgula
-        System.out.printf("%.4f%n",x); //Delimita 4 casas após a vírgula
 
-        //EXEMPLO DE ESCRITA ( VALOR DECIMAL COM SEPARADOR US - MUDAR LOCALIZADOR DO PROGRAMA )
-        Locale.setDefault(Locale.US); //Muda o formato do separador decimal ( Muda a localização do nosso programa )
-        System.out.printf("%.2f%n",x);
-        System.out.printf("%.4f%n",x);
+        // Exibindo apenas 2 casas decimais
+        System.out.printf("%.2f%n", x);
 
-        //EXEMPLO DE CONCATENAÇÃO PARA PRINT/PRINTLN
-        int X = 100;
-        System.out.println("RESULTADO = " + X + " METROS");
+        // Exibindo apenas 4 casas decimais
+        System.out.printf("%.4f%n", x);
 
-        String nome3 = "Isabelly Ribeiro";
 
-        System.out.println("Senhoras e Senhores, meu coração ja tem Dona e o nome dela é " + nome3 + ", e eu sou completamente apaixonado por essa garota!");
+        // =========================================================
+        // EXEMPLO 2 - ALTERANDO A LOCALIZAÇÃO DO PROGRAMA
+        // =========================================================
 
-        System.out.printf("RESULTADO = %.2f metros%n",x);
+        // Utilizando o padrão americano para separador decimal
+        Locale.setDefault(Locale.US);
 
-        //EXEMPLO CONCATENAÇÃO COM MAIS DE DOIS TIPOS DE VARIÁVEL
+        System.out.printf("%.2f%n", x);
+        System.out.printf("%.4f%n", x);
+
+
+        // =========================================================
+        // EXEMPLO 3 - CONCATENAÇÃO COM O OPERADOR +
+        // =========================================================
+
+        int distancia = 100;
+
+        System.out.println("RESULTADO = " + distancia + " METROS");
+
+        String nomeNamorada = "Isabelly Ribeiro";
+
+        System.out.println(
+                "Senhoras e Senhores, meu coração já tem dona e o nome dela é "
+                        + nomeNamorada
+                        + ", e eu sou completamente apaixonado por essa garota!"
+        );
+
+
+        // =========================================================
+        // EXEMPLO 4 - FORMATAÇÃO UTILIZANDO printf
+        // =========================================================
+
+        System.out.printf("RESULTADO = %.2f metros%n", x);
+
+
+        // =========================================================
+        // EXEMPLO 5 - FORMATANDO DIFERENTES TIPOS DE DADOS
+        // =========================================================
+
         String nome = "Isabelly";
         int idade = 16;
         double renda = 2000.0;
-        System.out.printf("%s tem %d anos e tem na conta %.2f reais%n", nome, idade, renda);
 
-        //MAIS EXEMPLOS
-        String nome2 = "Carlos";
-        int idade2 = 21;
+        System.out.printf(
+                "%s tem %d anos e tem na conta %.2f reais%n",
+                nome,
+                idade,
+                renda
+        );
+
+
+        // =========================================================
+        // EXEMPLO 6 - CÁLCULO DE MÉDIA
+        // =========================================================
+
+        String aluno = "Carlos";
+        int idadeAluno = 21;
+
         double nota1 = 9.5;
         double nota2 = 8.5;
+
+        // Média aritmética das notas
         double media = (nota1 + nota2) / 2;
 
-        System.out.printf("O Aluno %s , tem %d anos e obteve %.2f na primeira prova e %.2f na segunda prova, ficando com a média %.1f ao fim do semestre", nome2, idade2, nota1, nota2, media);
-
+        System.out.printf(
+                "O aluno %s tem %d anos e obteve %.2f na primeira prova e %.2f na segunda prova, ficando com a média %.1f ao fim do semestre.%n",
+                aluno,
+                idadeAluno,
+                nota1,
+                nota2,
+                media
+        );
     }
 }
