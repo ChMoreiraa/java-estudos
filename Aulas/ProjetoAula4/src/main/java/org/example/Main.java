@@ -94,46 +94,119 @@ public class Main {
          * ============================================================
          */
 
-        String nome, mae, namorado;
-        int idade, dianas, mesnas, anonas;
-        double renda;
-        char genero;
+        // String nome, mae, namorado;
+        // int idade, dianas, mesnas, anonas;
+        // double renda;
+        // char genero;
 
-        // Entrada de dados
-        nome = sc.next();
-        mae = sc.next();
-        namorado = sc.next();
+        // nome = sc.next();
+        // mae = sc.next();
+        // namorado = sc.next();
 
-        genero = sc.next().charAt(0);
+        // genero = sc.next().charAt(0);
 
-        idade = sc.nextInt();
-        dianas = sc.nextInt();
-        mesnas = sc.nextInt();
-        anonas = sc.nextInt();
+        // idade = sc.nextInt();
+        // dianas = sc.nextInt();
+        // mesnas = sc.nextInt();
+        // anonas = sc.nextInt();
 
-        renda = sc.nextDouble();
+        // renda = sc.nextDouble();
 
-        // Saída de dados
-        System.out.printf(
-                "SEJA BEM-VINDO(A)%n" +
-                        "Seus dados são:%n" +
-                        "NOME: %s%n" +
-                        "IDADE: %d%n" +
-                        "DATA DE NASCIMENTO: %d/%d/%d%n" +
-                        "GENERO: %s%n" +
-                        "NOME DA MÃE: %s%n" +
-                        "NOME DO NAMORADO: %s%n" +
-                        "RENDA: %.2f%n",
-                nome,
-                idade,
-                dianas,
-                mesnas,
-                anonas,
-                genero,
-                mae,
-                namorado,
-                renda
-        );
+        // System.out.printf(
+        //         "SEJA BEM-VINDO(A)%n" +
+        //                 "Seus dados são:%n" +
+        //                 "NOME: %s%n" +
+        //                 "IDADE: %d%n" +
+        //                 "DATA DE NASCIMENTO: %d/%d/%d%n" +
+        //                 "GENERO: %s%n" +
+        //                 "NOME DA MÃE: %s%n" +
+        //                 "NOME DO NAMORADO: %s%n" +
+        //                 "RENDA: %.2f%n",
+        //         nome,
+        //         idade,
+        //         dianas,
+        //         mesnas,
+        //         anonas,
+        //         genero,
+        //         mae,
+        //         namorado,
+        //         renda
+        // );
+
+        /*
+         * ============================================================
+         * AULA 2 - MÉTODO nextLine()
+         * ============================================================
+         */
+
+        // String s1, s2, s3;
+        //
+        // s1 = sc.nextLine();
+        // s2 = sc.nextLine();
+        // s3 = sc.nextLine();
+        //
+        // System.out.println("DADOS DIGITADOS:");
+        // System.out.println(s1);
+        // System.out.println(s2);
+        // System.out.println(s3);
+
+        /*
+         * ============================================================
+         * PROBLEMA COM nextLine()
+         * ============================================================
+         *
+         * O erro acontece porque o método nextInt() lê apenas o número
+         * digitado e deixa o ENTER (\n) armazenado no buffer.
+         *
+         * Quando o primeiro nextLine() é executado, ele consome esse
+         * ENTER pendente e entende que o usuário digitou uma linha vazia.
+         *
+         * Como consequência, as Strings ficam deslocadas.
+         */
+
+        // EXEMPLO COM ERRO
+
+        // int x;
+        // String s1, s2, s3;
+        //
+        // x = sc.nextInt();
+        //
+        // s1 = sc.nextLine();
+        // s2 = sc.nextLine();
+        // s3 = sc.nextLine();
+        //
+        // System.out.println("DADOS DIGITADOS:");
+        // System.out.println(x);
+        // System.out.println(s1);
+        // System.out.println(s2);
+        // System.out.println(s3);
+
+        /*
+         * ============================================================
+         * SOLUÇÃO DO PROBLEMA
+         * ============================================================
+         *
+         * Sempre que utilizar nextInt(), nextDouble(), nextFloat()
+         * ou métodos semelhantes antes de um nextLine(),
+         * utilize um nextLine() extra para limpar o buffer.
+         */
+
+        int x;
+        String s1, s2, s3;
+
+        x = sc.nextInt();
+
+        sc.nextLine(); // Limpa o ENTER pendente no buffer
+
+        s1 = sc.nextLine();
+        s2 = sc.nextLine();
+        s3 = sc.nextLine();
+
+        System.out.println("DADOS DIGITADOS:");
+        System.out.println(x);
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
 
         sc.close();
     }
